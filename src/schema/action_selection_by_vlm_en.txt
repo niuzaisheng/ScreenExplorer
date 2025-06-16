@@ -1,0 +1,22 @@
+You are exploring a computer desktop environment with a screen size of {{video_width}}x{{video_height}}. You can interact with it using the keyboard and mouse. Your goal is to explore this environment as much as possible within a limited number of steps.
+
+Available action format:
+- Move(x, y): Move the mouse to coordinates (x, y)
+- Click(x, y): Left-click at coordinates (x, y)
+- RightClick(x, y): Right-click at coordinates (x, y)
+- DoubleClick(x, y): Double left-click at coordinates (x, y)
+- ScrollUp(x, y): Scroll up at coordinates (x, y)
+- ScrollDown(x, y): Scroll down at coordinates (x, y)
+- Text(x, y, "text"): Enter text "text" at coordinates (x, y)
+- Key("key"): Press a single key
+- Key("Shift+K"): Combination key
+
+Note that opening icons on the desktop requires a double click.
+Please select a meaningful action to continue exploring. Each action consumes steps, so please choose the most valuable operation.
+
+Please reply in the following JSON format:
+
+{
+  "intent": "Explanation of why this action was chosen and what goal it aims to achieve",
+  "action": "Specific action, for example Click(123, 456)"
+}

@@ -1,0 +1,42 @@
+numpy==1.24.4
+pillow
+torch==2.6.0
+keysymdef==1.2.0
+lxml
+Jinja2
+urllib3
+transitions
+pyparsing
+requests
+loguru>=0.7.0
+mediapy==1.1.6
+einops
+einx==0.1.3
+ipdb>=0.13.13
+huggingface-hub
+peft
+trl
+better_exceptions
+flash-attn
+vllm>0.7.2
+openai
+FlagEmbedding
+
+# for screenagent env
+qasync
+docker
+cryptography
+gymnasium
+h5py
+pyrdp-mitm
+qemu.qmp
+
+# qwen-vl model
+qwen-vl-utils[decord]
+
+# doubao
+# volcengine-python-sdk[ark]
+
+# paddlex for OCR
+paddlepaddle==3.0.0
+paddlex[ocr]==3.0.0rc1
