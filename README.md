@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/9a7abcf6-f4b5-4fc1-b218-8b349668d820
 <p align="center">
 <h1 align="center"> ScreenExplorer: Training a Vision-Language Model for Diverse Exploration in Open GUI World </h1>
 </p>
@@ -12,10 +14,9 @@ We introduce ScreenExplorer, a VLM trained via Group Relative Policy Optimizatio
 
 ## Demo Videos
 
-**3B Model:**  [ScreenExplorer-3B-E1 Video]()
+**3B Model:**  [ScreenExplorer-3B-E1 Video](https://github.com/user-attachments/assets/08c396e3-b027-4eaf-93ae-a54f69b410ce)
 
-**7B Model:**  [ScreenExplorer-7B-E1 Video]()
-
+**7B Model:**  [ScreenExplorer-7B-E1 Video](https://github.com/user-attachments/assets/803b9dd7-9ac7-47ea-841b-54e221b5670a)
 
 ## Project Structure
 
