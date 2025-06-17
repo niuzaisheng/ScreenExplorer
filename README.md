@@ -6,7 +6,13 @@
   <a href="https://arxiv.org/abs/2505.19095">
     <img src="https://img.shields.io/badge/arXiv-2505.19095-b31b1b.svg" alt="arXiv">
   </a>
-</p>
+  <a href="https://github.com/niuzaisheng/ScreenExplorer">
+    <img src="https://img.shields.io/badge/GitHub-ScreenExplorer-blue?logo=github&link=https://github.com/niuzaisheng/ScreenExplorer" alt="GitHub">
+  </a>
+  <a href="https://huggingface.co/niurl/ScreenExplorer">
+    <img src="https://img.shields.io/badge/HuggingFace-ScreenExplorer-blue?logo=huggingface&link=https://huggingface.co/niurl/ScreenExplorer" alt="HuggingFace">
+  </a>
+  </p>
 
 We introduce ScreenExplorer, a VLM trained via Group Relative Policy Optimization(GRPO) in real, dynamic, and open-ended GUI environments for diverse exploration. ScreenExplorer is trained to explore and interact with the screen environment, learning to interact effectively with environments based on screenshots and a fixed instruction to encourage exploration.
 
@@ -43,7 +49,7 @@ https://github.com/user-attachments/assets/803b9dd7-9ac7-47ea-841b-54e221b5670a
 
 1. Download Cosmos-Tokenizer-CI16x16 pretrained checkpoint from [here](https://huggingface.co/collections/nvidia/cosmos-tokenizer-672b93023add81b66a8ff8e6) and put it in `src/pretrained_ckpts/` directory.
 
-2. Make sure you have downloaded base model `Qwen/Qwen2.5-VL-3B-Instruct` or `Qwen/Qwen2.5-VL-yB-Instruct` from huggingface. And meta-llama/Llama-3.2-1B for world model. 
+2. Make sure you have downloaded base model `Qwen/Qwen2.5-VL-3B-Instruct` or `Qwen/Qwen2.5-VL-7B-Instruct` from huggingface. And meta-llama/Llama-3.2-1B for world model. 
 
 3. Setup docker environment for screen environment:
 
@@ -86,6 +92,8 @@ python train_explorer.py \
 
 ## Run Online Evaluation:
 
+You can download the trained LoRA checkpoints from [HuggingFace](https://huggingface.co/niurl/ScreenExplorer) or train your own model as described above.
+
 Evaluate base 3B model on 1 GPU:
 
 ```bash
@@ -105,4 +113,32 @@ python online_eval.py \
 --model_name_or_path Qwen/Qwen2.5-VL-3B-Instruct \
 --load_lora_weights logs/<path_to_your_experiment_checkpoint_dir>/episode_100/actor_model_100 \
 --temperature 1.0
+```
+
+
+Evaluate checkpoint of 7B model on 1 GPU:
+
+```bash
+cd src
+export CUDA_VISIBLE_DEVICES=0
+python online_eval.py \
+--eval_episodes 20 \
+--model_type vllm \
+--model_name_or_path Qwen/Qwen2.5-VL-7B-Instruct \
+--load_lora_weights logs/<path_to_your_experiment_checkpoint_dir>/episode_200/actor_model_200 \
+--temperature 1.0
+```
+
+## Citation
+
+```bibtex
+@misc{niu2025screenexplorertrainingvisionlanguagemodel,
+      title={ScreenExplorer: Training a Vision-Language Model for Diverse Exploration in Open GUI World}, 
+      author={Runliang Niu and Jinglong Ji and Yi Chang and Qi Wang},
+      year={2025},
+      eprint={2505.19095},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2505.19095}, 
+}
 ```
