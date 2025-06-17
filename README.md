@@ -53,7 +53,7 @@ docker pull sgccr.ccs.tencentyun.com/screenagent/screenagent:2.0 # in global
 docker pull ccr.ccs.tencentyun.com/screenagent/screenagent:2.0 # in China
 ```
 
-4. Run training:
+## Run Training
 
 Train 3B model on 1 GPU:
 
@@ -84,7 +84,7 @@ python train_explorer.py \
   --save_checkpoint_interval 10
 ```
 
-5. Run online evaluation:
+## Run Online Evaluation:
 
 Evaluate base 3B model on 1 GPU:
 
